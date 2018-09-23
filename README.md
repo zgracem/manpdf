@@ -16,8 +16,10 @@ It's the future. Treat yourself to a nicer-looking man page.
 ## Installation
 
 1. Clone this repository somewhere.
-2. Move `. ~/somewhere/manpdf/manpdf.sh` to `~/bin/manpdf`, or somewhere else 
+2. Move `~/somewhere/manpdf/manpdf.sh` to `~/bin/manpdf`, or somewhere else 
    in your `PATH`.
+3. Add `~/somewhere/manpdf/_manpdf.bash` to your `.bashrc` for a handy wrapper
+   function.
 
 ## Usage
 
