@@ -15,16 +15,17 @@ It's the future. Treat yourself to a nicer-looking man page.
 
 ## Installation
 
-1. Clone this repository somewhere.
-2. Move `~/somewhere/manpdf/manpdf.sh` to `~/bin/manpdf`, or somewhere else 
+1. Install GhostScript (e.g. `brew install ghostscript`).
+2. Clone this repository somewhere.
+3. Move `~/somewhere/manpdf/manpdf.sh` to `~/bin/manpdf`, or somewhere else 
    in your `PATH`.
-3. Add `. ~/somewhere/manpdf/_manpdf.bash` to your `.bashrc` for a handy
+4. Add `. ~/somewhere/manpdf/_manpdf.bash` to your `.bashrc` for a handy
    wrapper function.
 
 ## Usage
 
 * `manpdf bash` creates `$MANPDF_DIR/bash.1.pdf` if it doesn't exist.
-  (`MANPDF_DIR` defaults to `~/.manpath`.)
+  (`MANPDF_DIR` defaults to `~/.manpdf`.)
 * `manpdf -f bash` re-creates the PDF, even if it already exists.
   (Useful after a software upgrade updates the man page.)
 * You can also search specific sections of the manual: `manpdf 3 printf`.
