@@ -1,0 +1,53 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "MANPDF" "1" "March 2019" "Z.G.M." ""
+.
+.SH "NAME"
+\fBmanpdf\fR \- generate a nice\-looking man page
+.
+.SH "SYNOPSIS"
+\fBmanpdf\fR [\-f|\-\-force] [\fIsection\fR] \fIname\fR
+.
+.SH "DESCRIPTION"
+Everyone(?) knows the trick where you pipe PostScript output from \fBman(1)\fR to create a nice\-looking PDF\. But here\'s what that PDF \fIdoesn\'t\fR have:
+.
+.IP "\(bu" 4
+Bookmarks, so you can use your PDF viewer\'s Table of Contents feature to find the section you\'re looking for\.
+.
+.IP "\(bu" 4
+A permanent home, so you don\'t have to re\-generate the same PDF over and over again\.
+.
+.IP "\(bu" 4
+Metadata, so you can, you know\.\.\. have metadata\.
+.
+.IP "" 0
+.
+.P
+It\'s the future\. Treat yourself to a nicer\-looking man page\.
+.
+.SH "OPTIONS"
+.
+.TP
+\fB\-f\fR, \fB\-\-force\fR
+Force a rebuild of the PDF man page, even if it already exists\.
+.
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Print usage on standard output\.
+.
+.SH "ENVIRONMENT"
+By default, \fBmanpdf\fR stores its generated PDFs in \fB~/\.manpdf\fR\. You can override this by setting \fBMANPDF_DIR\fR in your environment\.
+.
+.SH "REQUIREMENTS"
+.
+.IP "\(bu" 4
+GhostScript \fIhttps://www\.ghostscript\.com/\fR
+.
+.IP "" 0
+.
+.SH "SEE ALSO"
+man(1), groff(1), groff(7), gs(1)
+.
+.SH "HOMEPAGE"
+\fIhttps://github\.com/zgracem/manpdf\fR
