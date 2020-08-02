@@ -213,7 +213,7 @@ process_man_file()
   #                                          cut it off
   #   - Call the `.pdfsync` macro to apply the metadata commands
   #
-  # The second sed call removes unsightly and unnecessary escaping backslashes
+  # The second sed call removes unsightly and unnecessary escape sequences
   # from bookmark titles, which aren't present to be removed until the first
   # set of commands is complete, and converts arguments to the `.so` (source)
   # macro to absolute paths [test case: zshall(1)].
@@ -228,7 +228,8 @@ process_man_file()
     -e '1s#.*#.pdfview /PageMode /UseOutlines /Page 1 /View [/Fit]\n.nr PDFOUTLINE.FOLDLEVEL 1\n.nr PDFHREF.VIEW.LEADING 30.0p\n&#' \
     -e '$s#.*#&\n.pdfsync#' \
   | sed -E \
-    -e '/^\.pdf/s/\\//g' \
+    -e '/^\.pdfbookmark/s/\\?f[BIRP]//g' \
+    -e '/^\.pdfbookmark/s/\\//g' \
     -e 's#^\.so ([^/].*)$#.so '"${man_path%/*}/../"'\1#p' \
   > "${processed_man_file}"
 
