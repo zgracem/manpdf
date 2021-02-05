@@ -17,10 +17,11 @@ It's the future. Treat yourself to a nicer-looking man page.
 
 1. Install GhostScript (e.g. `brew install ghostscript`).
 2. Clone this repository somewhere.
-3. Move `~/somewhere/manpdf/manpdf.sh` to `~/bin/manpdf`, or somewhere else 
+3. Move `~/somewhere/manpdf/manpdf.sh` to `~/bin/manpdf`, or somewhere else
    in your `PATH`.
-4. Add `. ~/somewhere/manpdf/_manpdf.bash` to your `.bashrc` for a handy
-   wrapper function.
+4. For a handy wrapper function, add `. ~/somewhere/manpdf/wrappers/manpdf.bash`
+   to your `.bashrc`, and/or copy `~/somewhere/manpdf/wrappers/manpdf.fish` to
+   `~/.config/fish/functions`.
 
 ## Usage
 
