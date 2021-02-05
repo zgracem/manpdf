@@ -228,8 +228,9 @@ process_man_file()
     -e '1s#.*#.pdfview /PageMode /UseOutlines /Page 1 /View [/Fit]\n.nr PDFOUTLINE.FOLDLEVEL 1\n.nr PDFHREF.VIEW.LEADING 30.0p\n&#' \
     -e '$s#.*#&\n.pdfsync#' \
   | sed -E \
-    -e '/^\.pdfbookmark/s/\\?f[BIRP]//g' \
+    -e '/^\.pdfbookmark/s/\\?f([BIRP]|\[C?\])//g' \
     -e '/^\.pdfbookmark/s/\\//g' \
+    -e "/^\.pdfbookmark/s/\\\?\\[aq\\]/'/g" \
     -e 's#^\.so ([^/].*)$#.so '"${man_path%/*}/../"'\1#p' \
   > "${processed_man_file}"
 
